@@ -1,0 +1,10 @@
+{
+  "name": "perfection-tv",
+  "version": "1.0.0",
+  "description": "Website for perfection.tv",
+  "main": "src/index.js",
+  "repository": "https://github.com/PerfectionCSGO/perfection-tv.git",
+  "author": "perfection.tv <perfectioncsgo@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
