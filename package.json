@@ -11,8 +11,11 @@
     "build": "webpack --progress --config webpack.config.production",
     "start": "webpack-dev-server --progress --open --config webpack.config.development",
     "clean": "rimraf dist",
-    "prettier-check": "prettier \"**/*.{js,tsx,md,json}\" --list-different",
-    "prettier-write": "prettier \"**/*.{js,tsx,md,json}\" --write"
+    "prettier-check": "prettier \"**/*.{js,jsx,md,json}\" --list-different",
+    "prettier-fix": "prettier \"**/*.{js,jsx,md,json}\" --write",
+    "eslint-check": "eslint \"**/*.{js,jsx}\"",
+    "eslint-fix": "eslint \"**/*.{js,jsx}\" --fix",
+    "eslint-compat": "eslint --print-config . | eslint-config-prettier-check"
   },
   "dependencies": {
     "react": "^16.8.4",
@@ -24,6 +27,12 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.16.4",
     "webpack": "^4.29.6",

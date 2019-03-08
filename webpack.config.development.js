@@ -1,7 +1,8 @@
-var base = require('./webpack.config.base');
-var merge = require('webpack-merge');
-var { HotModuleReplacementPlugin } = require('webpack');
-var config = {
+const merge = require('webpack-merge');
+const { HotModuleReplacementPlugin } = require('webpack');
+const base = require('./webpack.config.base');
+
+const config = {
   mode: 'development',
   plugins: [new HotModuleReplacementPlugin()]
 };
