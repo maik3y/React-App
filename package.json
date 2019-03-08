@@ -10,7 +10,9 @@
   "scripts": {
     "build": "webpack --progress --config webpack.config.production",
     "start": "webpack-dev-server --progress --open --config webpack.config.development",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "prettier-check": "prettier \"**/*.{js,tsx,md,json}\" --list-different",
+    "prettier-write": "prettier \"**/*.{js,tsx,md,json}\" --write"
   },
   "dependencies": {
     "react": "^16.8.4",

@@ -2,6 +2,8 @@
 
 Website for perfection.tv
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 # quick start
 
 Install dependencies.
@@ -34,8 +36,8 @@ yarn clean
 
 # todo
 
-- appcontainer for hot loader
 - sass boilerplate
 - jest tests
 - eslint
 - prettier
+- react hot loader vs webpack hot?
