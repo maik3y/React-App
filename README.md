@@ -37,6 +37,4 @@ yarn clean
 # todo
 
 - sass boilerplate
-- jest tests
-- eslint
 - react hot loader vs webpack hot?
