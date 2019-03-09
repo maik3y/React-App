@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render app 1`] = `
-<p>
+<div
+  className="app"
+>
   hello world
-</p>
+</div>
 `;

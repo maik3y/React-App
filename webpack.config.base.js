@@ -19,13 +19,13 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist/www'),
-    filename: '[name].bundle.js'
+    filename: '[name].[hash].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'perfection.tv',
       template: path.resolve(__dirname, './src/index.html'),
-      chunks: ['app', 'vendor']
+      chunks: ['app']
     })
   ]
 };
