@@ -19,6 +19,7 @@
     "eslint-compat": "eslint --print-config . | eslint-config-prettier-check"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "npm:@hot-loader/react-dom",
     "react": "^16.8.6",
     "react-dom": "npm:@hot-loader/react-dom"
   },
