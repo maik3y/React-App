@@ -1,0 +1,9 @@
+{
+  "strict": true,
+  "compilerOptions": {
+    "jsx": "react",
+    "skipLibCheck": true,
+    "noUnusedLocals": false
+  },
+  "include": ["**/*"]
+}

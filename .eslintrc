@@ -1,29 +1,39 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
   ],
+  "plugins": ["@typescript-eslint", "react", "jest", "prettier"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    }
+  },
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "prettier/prettier": "error",
+    "typescript/no-unused-vars": "warn",
+    "no-unused-vars": "off",
+    "no-console": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "__static": true
   },
   "settings": {
     "react": {
       "version": "detect"
     }
-  },
-  "plugins": ["prettier", "react", "jest"],
-  "rules": {
-    "prettier/prettier": "error"
   }
 }
