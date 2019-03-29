@@ -40,4 +40,3 @@ yarn install // updates yarn.lock with current version constraint from package.j
 # TO DO
 
 - CI/CD
-- React-Hot-Loader vs Webpack-Hot-Loader?
