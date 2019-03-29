@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -8,8 +9,7 @@ const config = {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
-        parallel: true,
-        sourceMap: true // set to true if you want JS source maps
+        parallel: true
       })
     ]
   }

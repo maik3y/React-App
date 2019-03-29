@@ -1,9 +1,11 @@
 {
   "strict": true,
   "compilerOptions": {
+    "target": "es6",
     "jsx": "react",
     "skipLibCheck": true,
-    "noUnusedLocals": false
-  },
-  "include": ["**/*"]
+    "noUnusedLocals": false,
+    "noImplicitAny": true,
+    "module": "commonjs"
+  }
 }

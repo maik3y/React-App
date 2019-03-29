@@ -2,7 +2,7 @@
 
 Website for perfection.tv
 
-React, Eslint, Sass, Stylelint, Webpack, Prettier, HMR, Jest.
+Webpack, Typescript, React, Eslint, Prettier, HMR, Jest...
 
 _"If only all this came in a single package."_
 

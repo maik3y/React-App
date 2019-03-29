@@ -17,10 +17,7 @@
     }
   },
   "rules": {
-    "react/jsx-uses-react": "error",
     "prettier/prettier": "error",
-    "typescript/no-unused-vars": "warn",
-    "no-unused-vars": "off",
     "no-console": "off"
   },
   "env": {
