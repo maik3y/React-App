@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: { app: './src/index.jsx' },
+  entry: { app: './src/index/index.jsx' },
   module: {
     rules: [
       {
@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'perfection.tv',
-      template: path.resolve(__dirname, './src/index.html'),
+      template: path.resolve(__dirname, './src/index/index.html'),
       chunks: ['app']
     })
   ]
