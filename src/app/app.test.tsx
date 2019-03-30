@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import App from './../../src/app/app';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 
 test('should render app', () => {
   const component = renderer.create(<App />);

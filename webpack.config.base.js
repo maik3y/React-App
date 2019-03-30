@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx|js|jsx)$/,
+        test: /\.(ts|tsx|js)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
@@ -16,7 +16,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+    extensions: ['.js', '.ts', '.tsx', '.json']
   },
   output: {
     path: path.resolve(__dirname, './dist/www'),

@@ -7,5 +7,6 @@
     "noUnusedLocals": false,
     "noImplicitAny": true,
     "module": "commonjs"
-  }
+  },
+  "include": ["./src/**/*"]
 }
