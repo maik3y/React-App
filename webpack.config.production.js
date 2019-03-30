@@ -1,16 +1,36 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
   mode: 'production',
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css'
+    })
+  ],
+  resolve: {
+    extensions: ['.scss']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      }
+    ]
+  },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true
-      })
+      }),
+      new OptimizeCSSAssetsPlugin({})
     ]
   }
 };
