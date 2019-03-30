@@ -14,6 +14,9 @@ const config = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 };
 module.exports = merge(base, config);
