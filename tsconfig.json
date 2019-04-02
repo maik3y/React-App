@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "noUnusedLocals": false,
     "noImplicitAny": true,
+    "experimentalDecorators": true,
     "module": "commonjs"
   },
   "include": ["./src/**/*"]
