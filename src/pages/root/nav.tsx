@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 interface P {
   routes: RouteConfig[];
 }
-const Nav: React.FC<P> = React.memo(({ routes }) => (
+const Nav: React.FC<P> = ({ routes }) => (
   <ul>
     {routes.map(route => {
       return route.routes.map(subRoute => (
@@ -14,6 +14,6 @@ const Nav: React.FC<P> = React.memo(({ routes }) => (
       ));
     })}
   </ul>
-));
+);
 
 export default Nav;
