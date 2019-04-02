@@ -12,13 +12,10 @@
     "start": "webpack-dev-server --progress --hot --open --config webpack.config.development",
     "clean": "rimraf dist",
     "test": "jest",
-    "prettier-check": "prettier \"**/*.{ts,tsx,md,json}\" --list-different",
-    "prettier-fix": "prettier \"**/*.{ts,tsx,md,json}\" --write",
-    "eslint-check": "eslint \"**/*.{ts,tsx}\"",
-    "eslint-fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "eslint-compat": "eslint --print-config . | eslint-config-prettier-check",
-    "stylelint-check": "stylelint \"./src/**/*.scss\"",
-    "stylelint-fix": "stylelint \"./src/**/*.scss\" --fix"
+    "prettier": "prettier \"**/*.{ts,tsx,md,json}\" --list-different",
+    "eslint": "eslint \"**/*.{ts,tsx}\"",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check",
+    "stylelint": "stylelint \"./src/**/*.scss\""
   },
   "dependencies": {
     "@hot-loader/react-dom": "npm:@hot-loader/react-dom",
