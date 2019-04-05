@@ -1,7 +1,7 @@
 import { RouteConfig } from 'react-router-config';
 import Root from './root';
-import Home from '../home/home';
-import About from '../about/about';
+import Home from '../../pages/home/home';
+import About from '../../pages/about/about';
 
 const routes: RouteConfig[] = [
   {

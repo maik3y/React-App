@@ -1,5 +1,5 @@
 import * as React from 'react';
-import App from './../../src/app/app';
+import App from './app';
 import * as renderer from 'react-test-renderer';
 
 test('should render app', () => {

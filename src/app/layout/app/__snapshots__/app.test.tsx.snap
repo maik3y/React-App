@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render app 1`] = `
+Array [
+  <ul>
+    <li>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        /
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current={null}
+        href="/about"
+        onClick={[Function]}
+      >
+        /about
+      </a>
+    </li>
+  </ul>,
+  <div>
+    <h1>
+      Root
+    </h1>
+    <div>
+      <h2>
+        Home
+      </h2>
+      <hr />
+      <h3>
+        Item 1
+      </h3>
+      <div>
+        <p>
+          ID: 
+          1
+        </p>
+        <p>
+          Name: 
+          Loading
+        </p>
+        <p>
+          State: 
+          2
+        </p>
+      </div>
+      <hr />
+      <h3>
+        Item 2
+      </h3>
+      <div>
+        <p>
+          ID: 
+          2
+        </p>
+        <p>
+          Name: 
+          Loading
+        </p>
+        <p>
+          State: 
+          2
+        </p>
+      </div>
+      <hr />
+      <h3>
+        Item 3
+      </h3>
+      <div>
+        <p>
+          ID: 
+          3
+        </p>
+        <p>
+          Name: 
+          Loading
+        </p>
+        <p>
+          State: 
+          2
+        </p>
+      </div>
+      <hr />
+      <h3>
+        Item 4
+      </h3>
+      <div>
+        <p>
+          ID: 
+          4
+        </p>
+        <p>
+          Name: 
+          Loading
+        </p>
+        <p>
+          State: 
+          2
+        </p>
+      </div>
+      <hr />
+      <h3>
+        Item 5
+      </h3>
+      <div>
+        <p>
+          ID: 
+          5
+        </p>
+        <p>
+          Name: 
+          Loading
+        </p>
+        <p>
+          State: 
+          2
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;

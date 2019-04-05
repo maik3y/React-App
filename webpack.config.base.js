@@ -3,7 +3,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: { app: './src/index/index.tsx' },
+  entry: {
+    vendor: ['core-js', 'react', 'react-dom'],
+    store: ['mobx', 'mobx-react-lite'],
+    route: ['react-router', 'react-router-dom', 'react-router-config'],
+    app: './src/index/index.tsx'
+  },
   module: {
     rules: [
       {
@@ -20,13 +25,13 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist/www'),
-    filename: '[name].[hash].js'
+    filename: '[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'perfection.tv',
       template: path.resolve(__dirname, './src/index/index.html'),
-      chunks: ['app']
+      chunks: 'all'
     })
   ]
 };
