@@ -1,7 +1,9 @@
 import 'core-js/stable';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './../app/layout/app/app';
 import './index.scss';
+import { BrowserRouter } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import routes from '../global/routes';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>, document.getElementById('app'));

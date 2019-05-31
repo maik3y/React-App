@@ -1,9 +1,11 @@
 import * as React from 'react';
 import App from './app';
-import * as renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import routes from '../../../global/routes';
 
-test('should render app', () => {
-  const component = renderer.create(<App />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+describe('App', (): void => {
+  it('should render', (): void => {
+    const wrapper = shallow(<App route={routes[0]} />);
+    expect(wrapper.exists()).toBe(true);
+  });
 });

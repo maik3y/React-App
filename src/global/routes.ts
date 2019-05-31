@@ -1,11 +1,11 @@
 import { RouteConfig } from 'react-router-config';
-import Root from './root';
-import Home from '../../pages/home/home';
-import About from '../../pages/about/about';
+import App from '../app/layout/app/app';
+import Home from '../app/layout/app/pages/home/home';
+import About from '../app/layout/app/pages/about/about';
 
 const routes: RouteConfig[] = [
   {
-    component: Root,
+    component: App,
     routes: [
       {
         path: '/',

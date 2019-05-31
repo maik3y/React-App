@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import routes from './../root/routes';
-import { hot } from 'react-hot-loader/root';
-import Nav from './../nav/nav';
+import { renderRoutes, RouteConfig } from 'react-router-config';
+import Nav from './nav/nav';
+import routes from '../../../global/routes';
 import './app.scss';
+interface P {
+  route: RouteConfig;
+}
+const App: React.FC<P> = ({ route }: P): JSX.Element => (
+  <div className="app">
+    <Nav routes={routes} />
+    <h1>Root</h1>
+    {renderRoutes(route.routes)}
+  </div>
+);
 
-const App: React.FC = () => {
-  return (
-    <BrowserRouter>
-      <Nav routes={routes} />
-      {renderRoutes(routes)}
-    </BrowserRouter>
-  );
-};
-
-export default hot(App);
+export default App;
