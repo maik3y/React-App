@@ -1,17 +1,30 @@
 import * as React from 'react';
-import { renderRoutes, RouteConfig } from 'react-router-config';
 import Nav from './nav/nav';
-import routes from '../../../global/routes';
 import './app.scss';
-interface P {
-  route: RouteConfig;
-}
-const App: React.FC<P> = ({ route }: P): JSX.Element => (
-  <div className="app">
-    <Nav routes={routes} />
-    <h1>Root</h1>
-    {renderRoutes(route.routes)}
-  </div>
-);
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Home from './pages/home/home';
+import About from './pages/about/about';
+import NotFound from './pages/notFound/notFound';
+import Login from './pages/login/login';
+import PrivateRoute from '../../components/PrivateRoute';
+import Logout from './pages/logout/logout';
+
+const App: React.FC = (): JSX.Element => {
+  return (
+    <Router>
+      <div className="app">
+        <Nav />
+        <Switch>
+          <PrivateRoute exact path={'/'} component={Home} />
+          <Redirect exact from={'/home'} to={'/'} />
+          <PrivateRoute exact path={'/about'} component={About} />
+          <Route exact path={'/logout'} component={Logout} />
+          <Route exact path={'/login'} component={Login} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;

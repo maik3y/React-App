@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Nav from './nav';
+import Login from './login';
 import { shallow } from 'enzyme';
 
-describe('Nav', (): void => {
+describe('Login', (): void => {
   it('should render', (): void => {
-    const wrapper = shallow(<Nav />);
+    const wrapper = shallow(<Login />);
     expect(wrapper.exists()).toBe(true);
   });
 });
