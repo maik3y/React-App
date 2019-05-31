@@ -22,6 +22,7 @@ const Login: React.FC<RouteProps> = ({ location }: RouteProps): JSX.Element => {
             <input
               type="text"
               name="email"
+              autoComplete="email"
               value={loginStore.email}
               disabled={loginStore.isBusy}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,6 +36,7 @@ const Login: React.FC<RouteProps> = ({ location }: RouteProps): JSX.Element => {
             <input
               type="password"
               name="password"
+              autoComplete="current-password"
               value={loginStore.password}
               disabled={loginStore.isBusy}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
