@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "build:clean": "rimraf ./dist",
-    "build:renderer:hot": "webpack-dev-server --progress --hot --open --config ./webpack.config.development",
-    "build:renderer": "webpack --progress --config ./webpack.config.production",
+    "build:renderer:hot": "webpack-dev-server --progress --hot --open --config ./scripts/webpack/webpack.config.development",
+    "build:renderer": "webpack --progress --config ./scripts/webpack/webpack.config.production",
     "build": "yarn build:clean && yarn build:renderer",
     "ci": "yarn build:clean && yarn build:renderer && yarn eslint-check && yarn eslint && yarn stylelint && yarn typedoc && yarn test",
     "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
