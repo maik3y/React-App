@@ -1,5 +1,18 @@
 import { observable, computed, runInAction, action } from 'mobx';
+import AuthorizationStore from '../authorizationStore/authorizationStore';
 export default class LoginStore {
+  private readonly authorizationStore: AuthorizationStore;
+
+  public constructor(authorizationStore: AuthorizationStore) {
+    this.authorizationStore = authorizationStore;
+
+    var test = localStorage.getItem('test');
+    if (test) {
+      const isAuthorized = JSON.parse(test);
+      this.setIsAuthorized(isAuthorized);
+    }
+    this.setIsBusy(false);
+  }
   @observable
   private _isAuthorized: boolean = false;
   @computed
@@ -110,14 +123,5 @@ export default class LoginStore {
     } finally {
       this.setIsBusy(false);
     }
-  }
-
-  public constructor() {
-    var test = localStorage.getItem('test');
-    if (test) {
-      const isAuthorized = JSON.parse(test);
-      this.setIsAuthorized(isAuthorized);
-    }
-    this.setIsBusy(false);
   }
 }
