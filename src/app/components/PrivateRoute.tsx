@@ -2,10 +2,8 @@ import * as React from 'react';
 import { LoginStoreContext } from '../../global/store/storeContext';
 import { Route, Redirect, RouteProps } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-export interface PrivateRouteProps {
-  component: React.FC<RouteProps>;
-}
-const PrivateRoute = ({ component: Component, ...rest }: PrivateRouteProps): JSX.Element => {
+
+const PrivateRoute = ({ component: Component, ...rest }: RouteProps): JSX.Element => {
   const loginStore = React.useContext(LoginStoreContext);
   return (
     <Route
