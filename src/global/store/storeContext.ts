@@ -1,11 +1,8 @@
 import * as React from 'react';
-import AppStore from './appStore/appStore';
-import LoginStore from './loginStore/loginStore';
+import RootStore from './rootStore/rootStore';
 
-const loginStore = new LoginStore();
+const { loginStore, appStore } = new RootStore();
 const LoginStoreContext = React.createContext(loginStore);
-
-const appStore = new AppStore();
 const AppStoreContext = React.createContext(appStore);
 
 export { LoginStoreContext, AppStoreContext };

@@ -102,7 +102,6 @@ export default class LoginStore {
     try {
       this.setErrorMessage('');
       this.setIsBusy(true);
-      console.log('removing');
       localStorage.removeItem('test');
       this.setIsAuthorized(false);
     } catch (error) {
@@ -117,7 +116,6 @@ export default class LoginStore {
     var test = localStorage.getItem('test');
     if (test) {
       const isAuthorized = JSON.parse(test);
-      console.log(test);
       this.setIsAuthorized(isAuthorized);
     }
     this.setIsBusy(false);

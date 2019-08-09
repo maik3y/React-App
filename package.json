@@ -11,7 +11,7 @@
     "build:renderer:hot": "webpack-dev-server --progress --hot --open --config ./webpack.config.development",
     "build:renderer": "webpack --progress --config ./webpack.config.production",
     "build": "yarn build:clean && yarn build:renderer",
-    "ci": "yarn build:clean && yarn build:renderer && yarn eslint-check && yarn eslint && yarn prettier && yarn stylelint && yarn typedoc && yarn test",
+    "ci": "yarn build:clean && yarn build:renderer && yarn eslint-check && yarn eslint && yarn stylelint && yarn typedoc && yarn test",
     "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
     "eslint": "eslint \"./**/*.{ts,tsx}\"",
     "prettier": "prettier --list-different \"./**/*.{tsx,jsx,ts,js,less,scss,css}\"",

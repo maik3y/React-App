@@ -25,7 +25,7 @@ const Login: React.FC<RouteProps> = ({ location }: RouteProps): JSX.Element => {
               autoComplete="email"
               value={loginStore.email}
               disabled={loginStore.isBusy}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>): void => {
                 event.preventDefault();
                 loginStore.setEmail(event.target.value);
               }}
@@ -39,7 +39,7 @@ const Login: React.FC<RouteProps> = ({ location }: RouteProps): JSX.Element => {
               autoComplete="current-password"
               value={loginStore.password}
               disabled={loginStore.isBusy}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>): void => {
                 event.preventDefault();
                 loginStore.setPassword(event.target.value);
               }}

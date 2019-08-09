@@ -18,9 +18,9 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "no-console": "off",
-    "curly": "error",
-    "@typescript-eslint/explicit-function-return-type": "error"
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "react/no-unescaped-entities": "warn"
   },
   "env": {
     "browser": true,
