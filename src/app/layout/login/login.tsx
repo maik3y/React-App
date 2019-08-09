@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LoginStoreContext } from '../../../../global/store/storeContext';
+import { LoginStoreContext } from '../../../global/store/storeContext';
 import { observer } from 'mobx-react-lite';
 import { RouteProps, Redirect } from 'react-router';
 
@@ -9,8 +9,7 @@ const Login: React.FC<RouteProps> = ({ location }: RouteProps): JSX.Element => {
     return <Redirect to={location.state.from} />;
   }
   return (
-    <div>
-      <h2>Login</h2>
+    <>
       <form
         onSubmit={async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
           event.preventDefault();
@@ -53,7 +52,7 @@ const Login: React.FC<RouteProps> = ({ location }: RouteProps): JSX.Element => {
         </fieldset>
         {loginStore.errorMessage.length > 0 ? <fieldset>{loginStore.errorMessage}</fieldset> : null}
       </form>
-    </div>
+    </>
   );
 };
 
