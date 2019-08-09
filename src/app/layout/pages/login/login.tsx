@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LoginStoreContext } from '../../../../../global/store/storeContext';
+import { LoginStoreContext } from '../../../../global/store/storeContext';
 import { observer } from 'mobx-react-lite';
 import { RouteProps, Redirect } from 'react-router';
 

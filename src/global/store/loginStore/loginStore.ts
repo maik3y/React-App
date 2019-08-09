@@ -8,11 +8,9 @@ export default class LoginStore {
   }
   @action
   private setIsAuthorized(isAuthorized: boolean): void {
-    runInAction(
-      (): void => {
-        this._isAuthorized = isAuthorized;
-      }
-    );
+    runInAction((): void => {
+      this._isAuthorized = isAuthorized;
+    });
   }
 
   @observable
@@ -23,11 +21,9 @@ export default class LoginStore {
   }
   @action
   private setIsBusy(isBusy: boolean): void {
-    runInAction(
-      (): void => {
-        this._isBusy = isBusy;
-      }
-    );
+    runInAction((): void => {
+      this._isBusy = isBusy;
+    });
   }
 
   @observable
@@ -38,15 +34,13 @@ export default class LoginStore {
   }
   @action
   private setErrorMessage(errorMessage: string | Error): void {
-    runInAction(
-      (): void => {
-        if (errorMessage instanceof Error) {
-          this._errorMessage = errorMessage.message;
-        } else {
-          this._errorMessage = errorMessage;
-        }
+    runInAction((): void => {
+      if (errorMessage instanceof Error) {
+        this._errorMessage = errorMessage.message;
+      } else {
+        this._errorMessage = errorMessage;
       }
-    );
+    });
   }
 
   @observable
@@ -57,11 +51,9 @@ export default class LoginStore {
   }
   @action
   public setEmail(email: string): void {
-    runInAction(
-      (): void => {
-        this._email = email;
-      }
-    );
+    runInAction((): void => {
+      this._email = email;
+    });
   }
 
   @observable
@@ -72,11 +64,9 @@ export default class LoginStore {
   }
   @action
   public setPassword(password: string): void {
-    runInAction(
-      (): void => {
-        this._password = password;
-      }
-    );
+    runInAction((): void => {
+      this._password = password;
+    });
   }
 
   @observable
@@ -87,11 +77,9 @@ export default class LoginStore {
   }
   @action
   public setRememberMe(rememberMe: boolean): void {
-    runInAction(
-      (): void => {
-        this._rememberMe = rememberMe;
-      }
-    );
+    runInAction((): void => {
+      this._rememberMe = rememberMe;
+    });
   }
 
   @action

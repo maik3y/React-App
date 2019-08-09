@@ -1,13 +1,13 @@
 import * as React from 'react';
-import Nav from './nav/nav';
+import Nav from '../nav/nav';
 import './app.scss';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Home from './pages/home/home';
-import About from './pages/about/about';
-import NotFound from './pages/notFound/notFound';
-import Login from './pages/login/login';
+import Home from '../pages/home/home';
+import About from '../pages/about/about';
+import NotFound from '../pages/notFound/notFound';
+import Login from '../pages/login/login';
 import PrivateRoute from '../../components/PrivateRoute';
-import Logout from './pages/logout/logout';
+import Logout from '../pages/logout/logout';
 
 const App: React.FC = (): JSX.Element => {
   return (

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import HiddenRoute from '../../../components/HiddenRoute';
+import HiddenRoute from '../../components/HiddenRoute';
 
 const Nav: React.FC = (): JSX.Element => {
   return (
