@@ -1,17 +1,17 @@
 import * as React from 'react';
-import './withPage.scss';
 
-const withPage = <P extends object>(title: string, Component: React.ComponentType<P>): React.FC<P> => ({
-  ...props
-}: {}) => (
-  <div className="page">
-    <div className="page-title">
-      <h2>{title}</h2>
-    </div>
-    <div className="page-content">
-      <Component {...(props as P)} />
-    </div>
-  </div>
-);
+function withPage<P extends object>(title: string, Component: React.ComponentType<P>): React.FC<P> {
+  const Page = ({ ...props }: {}): JSX.Element => (
+    <section className="page">
+      <header className="page">
+        <h2>{title}</h2>
+      </header>
+      <article className="page">
+        <Component {...(props as P)} />
+      </article>
+    </section>
+  );
+  return Page;
+}
 
 export default withPage;

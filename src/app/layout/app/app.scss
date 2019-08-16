@@ -1,25 +1,123 @@
-.app {
-  display: flex;
+$main-nav-color: #000;
+$main-color: #fff;
+
+html {
+  font-size: 10px;
 }
 
-.navigation {
-  min-width: 25rem;
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+body,
+html,
+#app {
+  height: 100vh;
+}
 
-    li a {
+body {
+  font-size: 1.8rem;
+}
+
+img {
+  border: 0;
+  outline: 0;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section.nav {
+  background: $main-nav-color;
+  flex: 0 0 25rem;
+
+  header.nav {
+  }
+
+  nav.nav {
+    padding: 1rem 0;
+
+    a {
+      padding: 1rem;
       display: block;
-      padding: 0.8rem;
-      transition: background 0.2s ease;
+
+      transition: color 0.5s ease-in-out, background-color 0.2s ease-in-out;
+      color: $main-color;
+      background-color: $main-nav-color;
+
+      &.active,
       &:hover {
-        background: rgba(0, 0, 0, 0.5);
+        color: $main-nav-color;
+        background-color: $main-color;
+      }
+    }
+  }
+
+  footer.nav {
+    .user-image {
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .user-username {
+      text-align: center;
+      padding: 1rem;
+      color: $main-color;
+      font-weight: bold;
+    }
+
+    .user-details {
+      flex: 1 0 15rem;
+
+      a {
+        padding: 1rem;
+        display: block;
+
+        transition: color 0.5s ease-in-out, background-color 0.2s ease-in-out;
+        color: $main-color;
+        background-color: $main-nav-color;
+
+        &.active,
+        &:hover {
+          color: $main-nav-color;
+          background-color: $main-color;
+        }
       }
     }
   }
 }
 
-.content {
-  min-width: 39rem;
+section.main {
+  background: $main-color;
+  flex: 1;
+
+  header.main {
+  }
+
+  footer.main {
+  }
+}
+
+section.page {
+  header.page {
+  }
+
+  article.page {
+  }
 }

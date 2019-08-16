@@ -21,7 +21,7 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx', '.json']
   },
   output: {
-    path: resolve(__dirname, './dist/www'),
+    path: resolve(__dirname, './../../dist/www'),
     filename: '[name].js'
   },
   plugins: [
