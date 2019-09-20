@@ -1,8 +1,7 @@
 import * as React from 'react';
-import RootStore from './rootStore/rootStore';
+import RootStore from './rootStore';
 
-const { loginStore, appStore } = new RootStore();
-const LoginStoreContext = React.createContext(loginStore);
-const AppStoreContext = React.createContext(appStore);
+const rootStore = new RootStore();
+const LoginStoreContext = React.createContext(rootStore.loginStore);
 
-export { LoginStoreContext, AppStoreContext };
+export { LoginStoreContext };

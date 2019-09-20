@@ -21,6 +21,7 @@
     "typedoc": "typedoc --out ./dist/documentation --excludeExternals --mode modules --module commonjs --target ES6 ./src"
   },
   "dependencies": {
+    "@auth0/auth0-spa-js": "^1.2.3",
     "core-js": "^3.2.1",
     "lodash": "^4.17.15",
     "mobx": "^5.13.0",

@@ -36,6 +36,24 @@ ul {
   list-style: none;
 }
 
+.debug-table {
+  width: 100%;
+  background: red;
+  color: #fff;
+  thead > tr > th {
+    background: #fff;
+    color: #000;
+  }
+
+  tbody > tr > td {
+    &:first-child {
+      text-align: right;
+    }
+    background: #fff;
+    color: #000;
+  }
+}
+
 #app {
   display: flex;
   flex-wrap: wrap;

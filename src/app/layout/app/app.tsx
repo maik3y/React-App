@@ -1,148 +1,118 @@
 import * as React from 'react';
 import './app.scss';
-import { BrowserRouter as Router, Switch, Route, Redirect, NavLink, Link } from 'react-router-dom';
-import Home from '../home/home';
-import About from '../about/about';
-import NotFound from '../notFound/notFound';
-import Login from '../login/login';
-import Logout from '../logout/logout';
-import withPage from '../withPage/withPage';
-import HiddenRoute from '../../components/HiddenRoute';
-import PrivateRoute from '../../components/PrivateRoute';
-import { round } from '../../../global/utils/math';
+import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { LoginStoreContext } from '../../../global/store/storeContext';
 
-const home = withPage('Home', Home);
-const about = withPage('About', About);
-const logout = withPage('Logout', Logout);
-const login = withPage('Login', Login);
-const notFound = withPage('NotFound', NotFound);
-
-const onRender: React.ProfilerOnRenderCallback = (id, phase, actualDuration): void => {
-  console.debug(`${phase}: ${id} (${round(actualDuration, 1)}ms)`);
-};
-
-const NavHeader: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="NavHeader" onRender={onRender}>
-      <header className="nav">
-        <Link to={'/'}>
-          <img src="https://via.placeholder.com/250x100/111/fff.jpg" alt="logo" />
-        </Link>
+function withPage<P extends object>(title: string, Component: React.ComponentType<P>): React.FC<P> {
+  const Page = ({ ...props }: {}): React.ReactElement => (
+    <section className="page">
+      <header className="page">
+        <h2>{title}</h2>
       </header>
-    </React.Profiler>
+      <article className="page">
+        <Component {...(props as P)} />
+      </article>
+    </section>
   );
-};
+  return Page;
+}
 
-const NavNavigation: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="NavNavigation" onRender={onRender}>
-      <nav className="nav">
-        <NavLink exact to={'/'}>
-          Home
-        </NavLink>
-        <NavLink exact to={'/home'}>
-          Redirect
-        </NavLink>
-        <NavLink exact to={'/about'}>
-          About
-        </NavLink>
-      </nav>
-    </React.Profiler>
-  );
-};
+const home = withPage('Home', (): React.ReactElement => <></>);
+const about = withPage('About', (): React.ReactElement => <></>);
+const notFound = withPage('NotFound', (): React.ReactElement => <></>);
 
-const NavFooter: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="NavFooter" onRender={onRender}>
-      <footer className="nav">
-        <div className="user-image">
-          <img src="https://via.placeholder.com/100x100/111/fff.jpg" alt="logo" />
-        </div>
-        <div className="user-details">
-          <div className="user-username">USERNAME</div>
-          <NavLink exact to={'/logout'}>
-            Logout
-          </NavLink>
-        </div>
-      </footer>
-    </React.Profiler>
-  );
-};
+const App: React.FC = (): React.ReactElement => {
+  const loginStore = React.useContext(LoginStoreContext);
 
-const Nav: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="NavFooter" onRender={onRender}>
-      <section className="nav">
-        <NavHeader />
-        <HiddenRoute
-          component={(): JSX.Element => (
-            <>
-              <NavNavigation />
-              <NavFooter />
-            </>
-          )}
-        />
-      </section>
-    </React.Profiler>
-  );
-};
+  React.useEffect((): React.EffectCallback => {
+    loginStore.init();
+    return (): void => {};
+  }, []);
 
-const MainHeader: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="MainHeader" onRender={onRender}>
-      <header className="main"></header>
-    </React.Profiler>
-  );
-};
-
-const MainContent: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="MainContent" onRender={onRender}>
-      <Switch>
-        <PrivateRoute exact path={'/'} component={home} />
-        <Redirect exact from={'/home'} to={'/'} />
-        <PrivateRoute exact path={'/about'} component={about} />
-        <Route exact path={'/logout'} component={logout} />
-        <Route exact path={'/login'} component={login} />
-        <Route component={notFound} />
-      </Switch>
-    </React.Profiler>
-  );
-};
-
-const MainFooter: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="MainFooter" onRender={onRender}>
-      <footer className="main"></footer>
-    </React.Profiler>
-  );
-};
-
-const Main: React.FC = (): JSX.Element => {
-  return (
-    <React.Profiler id="Main" onRender={onRender}>
-      <section className="main">
-        <MainHeader />
-        <MainContent />
-        <MainFooter />
-      </section>
-    </React.Profiler>
-  );
-};
-
-const App: React.FC = (): JSX.Element => {
   return (
     <React.StrictMode>
-      <React.Profiler id="App" onRender={onRender}>
-        <Router>
-          <>
-            <Nav />
-            <Main />
-          </>
-        </Router>
-      </React.Profiler>
+      <Router>
+        <>
+          <section className="nav">
+            <header className="nav">
+              <Link to={'/'}>
+                <img src="https://via.placeholder.com/250x100/111/fff.jpg" alt="logo" />
+              </Link>
+            </header>
+            <nav className="nav">
+              <NavLink exact to={'/'}>
+                Home
+              </NavLink>
+              <NavLink exact to={'/about'}>
+                About
+              </NavLink>
+            </nav>
+            <footer className="nav">
+              {loginStore.isAuthenticated ? (
+                <div className="nav-user">
+                  <div className="user-image">
+                    <img src="https://via.placeholder.com/100x100/111/fff.jpg" alt="logo" />
+                  </div>
+                  <div className="user-details">
+                    <div className="user-username">USERNAME</div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        loginStore.logout();
+                      }}>
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="nav-login">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      loginStore.login();
+                    }}>
+                    Login
+                  </button>
+                </div>
+              )}
+              <table className="debug-table">
+                <thead>
+                  <tr>
+                    <th>KEY</th>
+                    <th>VALUE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>isAuthorized:</td>
+                    <td>{loginStore.isAuthenticated.toString()}</td>
+                  </tr>
+                  <tr>
+                    <td>isLoading:</td>
+                    <td>{loginStore.isLoading.toString()}</td>
+                  </tr>
+                  <tr>
+                    <td>isPopupOpen:</td>
+                    <td>{loginStore.isPopupOpen.toString()}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </footer>
+          </section>
+          <section className="main">
+            <header className="main"></header>
+            <Switch>
+              <Route exact path={'/'} component={home} />
+              <Route exact path={'/about'} component={about} />
+              <Route component={notFound} />
+            </Switch>
+            <footer className="main"></footer>
+          </section>
+        </>
+      </Router>
     </React.StrictMode>
   );
 };
 
-export default App;
+export default observer(App);
