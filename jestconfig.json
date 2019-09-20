@@ -5,7 +5,7 @@
     "\\.(css|less|scss|png|jpg)$": "identity-obj-proxy"
   },
   "modulePathIgnorePatterns": ["<rootDir>/dist/", "<rootDir>/.yarn/"],
-  "setupFiles": ["./tests/setupTests.ts"],
+  "setupFiles": ["./__tests__/setupTests.ts"],
   "testMatch": ["**/?(*.)+(spec|test).[jt]s?(x)"],
   "reporters": ["default", "jest-junit"],
   "coverageDirectory": "./dist/coverage/",
