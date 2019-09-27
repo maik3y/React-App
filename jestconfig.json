@@ -7,7 +7,16 @@
   "modulePathIgnorePatterns": ["<rootDir>/dist/", "<rootDir>/.yarn/"],
   "setupFiles": ["./__tests__/setupTests.ts"],
   "testMatch": ["**/?(*.)+(spec|test).[jt]s?(x)"],
-  "reporters": ["default", "jest-junit"],
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        "suiteName": "Jest tests",
+        "outputDirectory": "./dist/test"
+      }
+    ]
+  ],
   "coverageDirectory": "./dist/coverage/",
   "collectCoverage": true,
   "collectCoverageFrom": ["src/**/*.{tsx,ts}", "!src/index/index.tsx"],

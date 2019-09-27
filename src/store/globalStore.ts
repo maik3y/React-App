@@ -1,15 +1,19 @@
-import { observable, computed, runInAction } from 'mobx';
+import { observable, computed, runInAction, action } from 'mobx';
 
 export default class GlobalStore {
   @observable
   private _value: string;
   @computed
-  private value(): string {
+  public get value(): string {
     return this._value;
+  }
+  @action
+  public setValue(value: string): void {
+    this._value = value;
   }
 
   public constructor() {
-    runInAction(() => {
+    runInAction((): void => {
       this._value = '';
     });
   }

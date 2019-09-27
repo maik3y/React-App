@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import RootStore from './rootStore';
 
 const rootStore = new RootStore();
-const LoginStoreContext = React.createContext(rootStore.loginStore);
+const GlobalStoreContext = createContext(rootStore.globalStore);
 
-export { LoginStoreContext };
+export { GlobalStoreContext };

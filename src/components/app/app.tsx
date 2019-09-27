@@ -2,7 +2,6 @@ import * as React from 'react';
 import './app.scss';
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { LoginStoreContext } from '../../store/storeContext';
 
 function withPage<P extends object>(title: string, Component: React.ComponentType<P>): React.FC<P> {
   const Page = ({ ...props }: {}): React.ReactElement => (
@@ -15,7 +14,7 @@ function withPage<P extends object>(title: string, Component: React.ComponentTyp
       </article>
     </section>
   );
-  return Page;
+  return observer(Page);
 }
 
 const home = withPage('Home', (): React.ReactElement => <></>);
@@ -23,13 +22,6 @@ const about = withPage('About', (): React.ReactElement => <></>);
 const notFound = withPage('NotFound', (): React.ReactElement => <></>);
 
 const App: React.FC = (): React.ReactElement => {
-  const loginStore = React.useContext(LoginStoreContext);
-
-  React.useEffect((): React.EffectCallback => {
-    loginStore.init();
-    return (): void => {};
-  }, []);
-
   return (
     <React.StrictMode>
       <Router>
