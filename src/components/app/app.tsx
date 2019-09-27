@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { hot } from 'react-hot-loader/root';
 import './app.scss';
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
@@ -54,4 +55,4 @@ const App: React.FC = (): React.ReactElement => {
   );
 };
 
-export default observer(App);
+export default hot(observer(App));
