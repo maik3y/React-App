@@ -1,10 +1,6 @@
-# perfection-tv
+# React App
 
-Website for perfection.tv
-
-Webpack, Typescript, React, Eslint, Prettier, HMR, Jest...
-
-_"If only all this came in a single package."_
+Webpack, Typescript, React, Eslint, Prettier, HMR, Jest
 
 # Quick start
 
@@ -36,7 +32,3 @@ yarn upgrade // update dependencies, updates yarn.lock
 syncyarnlock -s -k // updates package.json with versions installed from yarn.lock
 yarn install // updates yarn.lock with current version constraint from package.json
 ```
-
-# TO DO
-
-- CI/CD
