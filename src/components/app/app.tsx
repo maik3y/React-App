@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
-import './app.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import Header from '../header/header';

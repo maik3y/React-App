@@ -26,7 +26,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'perfection.tv',
+      title: 'React App',
       template: resolve(__dirname, './../../src/index/index.html'),
       chunks: 'all'
     })

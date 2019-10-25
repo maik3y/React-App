@@ -1,9 +1,9 @@
 {
-  "name": "perfection-tv",
+  "name": "React-App",
   "version": "1.0.0",
-  "description": "Website for perfection.tv",
-  "repository": "https://github.com/PerfectionCSGO/perfection-tv.git",
-  "author": "perfection.tv <perfectioncsgo@gmail.com>",
+  "description": "Basic website buildt with React/Mobx",
+  "repository": "https://github.com/maik3y/React-App.git",
+  "author": "<maikeysip@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {

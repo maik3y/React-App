@@ -1,0 +1,13 @@
+@import '../../style-configs/mixins/mixins.scss';
+
+.menu {
+  @include flex;
+
+  &__link {
+    margin: 0 0.8rem;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
