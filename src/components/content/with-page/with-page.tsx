@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import './page.scss';
+import './with-page.scss';
 
 const withPage = <P extends object>(title: string, Component: React.ComponentType<P>): React.FC<P> => {
   const Page = ({ ...props }: {}): React.ReactElement => (

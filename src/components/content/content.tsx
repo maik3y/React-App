@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router';
 import React from 'react';
-import withPage from '../page/with-page';
+import withPage from './with-page/with-page';
 
 const home = withPage('Home', (): React.ReactElement => <></>);
 const about = withPage('About', (): React.ReactElement => <></>);
