@@ -1,18 +1,6 @@
 import { Switch, Route } from 'react-router';
 import React from 'react';
-import { observer } from 'mobx-react-lite';
-
-const withPage = <P extends object>(title: string, Component: React.ComponentType<P>): React.FC<P> => {
-  const Page = ({ ...props }: {}): React.ReactElement => (
-    <section className="page">
-      <h1 className="page__title">{title}</h1>
-      <main className="page__content">
-        <Component {...(props as P)} />
-      </main>
-    </section>
-  );
-  return observer(Page);
-};
+import withPage from '../page/with-page';
 
 const home = withPage('Home', (): React.ReactElement => <></>);
 const about = withPage('About', (): React.ReactElement => <></>);

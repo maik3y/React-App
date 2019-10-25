@@ -1,0 +1,14 @@
+@import '../../../style-configs/mixins/mixins.scss';
+
+.menu {
+  @include flex;
+
+  &__link {
+    text-decoration: underline;
+    margin: 0 8rem;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
